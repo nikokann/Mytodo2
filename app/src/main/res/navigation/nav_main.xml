@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.github.nikokann.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_createTodoFragment"
+            app:destination="@id/createTodoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_mainFragment_to_todoDetailFragment"
+            app:destination="@id/todoDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTodoFragment"
+        android:name="com.github.nikokann.page.create.create.CreateTodoFragment"
+        android:label="CreateTodoFragment" />
+    <fragment
+        android:id="@+id/editTodoFragment"
+        android:name="com.github.nikokann.page.create.edit.EditTodoFragment"
+        android:label="EditTodoFragment" />
+    <fragment
+        android:id="@+id/todoDetailFragment"
+        android:name="com.github.nikokann.page.create.detail.TodoDetailFragment"
+        android:label="TodoDetailFragment" >
+        <action
+            android:id="@+id/action_todoDetailFragment_to_editTodoFragment"
+            app:destination="@id/editTodoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+</navigation>
