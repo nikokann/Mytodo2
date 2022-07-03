@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.github.nikokann.R
 import com.github.nikokann.databinding.CreateTodoFragmentBinding
 import com.google.android.material.snackbar.Snackbar
@@ -33,6 +34,9 @@ class CreateTodoFragment: Fragment(R.layout.create_todo_fragment) {
 
             Snackbar.make(requireView(), msg, Snackbar.LENGTH_SHORT).show()
             vm.errorMassege.value = ""
+        }
+        vm.done.observe(viewLifecycleOwner){
+            findNavController().popBackStack()
         }
     }
 
